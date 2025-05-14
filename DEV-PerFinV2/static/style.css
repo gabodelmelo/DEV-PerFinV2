@@ -1,0 +1,220 @@
+/* BACKGROUND BODY */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'segoe ui';
+  background-image: url("back.jpg"); /* Cambia "tu-imagen.jpg" por el nombre de tu imagen */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Evita que la imagen se desplace con el contenido */
+  background-color: white;
+}
+
+/* BACKGROUND FORM */
+
+.form-section {
+  text-align: center; /* Centra el contenido */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto; /* Centra el elemento en el medio de la página */
+  max-width: 400px; /* Limita el ancho para que sea responsive */
+}
+
+/* CAMBIAR FORMULARIO */
+
+/* Estilos para los botones */
+input[type="submit"] {
+  background-color: #000000; /* Cambia el color de fondo según tu elección */
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos para los elementos del formulario */
+label {
+  font-size: 18px;
+  color: #000000; /* Cambia el color del texto según tu elección */
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Cambia el color del borde según tu elección */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilos para los contenedores de totales */
+#total-ingresos-container,
+#total-gastos-container {
+  text-align: center; /* Centra el contenido */
+  margin: 20px auto; /* Centra los elementos en el medio de la página */
+  max-width: 400px; /* Limita el ancho para que sea responsive */
+}
+
+/* Estilo para el texto "Total de Ingresos" */
+#total-ingresos-container p {
+  font-size: 18px;
+  color: green; /* Texto en verde */
+}
+
+/* Estilo para el texto "Total de Gastos" */
+#total-gastos-container p {
+  font-size: 18px;
+  color: red; /* Texto en rojo */
+}
+
+
+/* BACKGROUND CANVAS */
+
+/* Estilo para los contenedores de los gráficos */
+#grafico-container-ingresos,
+#grafico-container-gastos {
+    position: relative; /* Agrega posición relativa */
+    z-index: 1; /* Establece un valor de z-index mayor que 0 para los gráficos */
+    margin-bottom: 20px;
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+    color: #000000;
+}
+
+/* Estilo para los gráficos de ingresos */
+#miGraficoIngresos {
+    border: 1px solid #ddd;
+    position: relative; /* Agrega posición relativa */
+    z-index: 1; /* Establece un valor de z-index mayor que el de los contenedores */
+}
+
+/* Estilo para los gráficos de gastos */
+#miGraficoGastos {
+    border: 1px solid #ddd;
+    position: relative; /* Agrega posición relativa */
+    z-index: 1; /* Establece un valor de z-index mayor que el de los contenedores */
+}
+
+/**/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #000000;
+  position: relative;
+  z-index: 2;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  .nav > .nav-header {
+    display: block; /* Cambia a bloque en pantallas pequeñas */
+    text-align: center; /* Centra el texto */
+    background-color: #000000; /* Cambia el fondo si es necesario */
+    color: #fff; /* Cambia el color del texto si es necesario */
+    padding: 10px; /* Añade espacio alrededor del texto */
+  }
+}
+
+.nav > .nav-header > .nav-title {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  color: #ffffff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #151515;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Registro de Ingresos</title>
+    <div class="nav">
+        <div class="nav-header">
+            <div class="nav-title">
+              REGISTRO FINANZAS
+            </div>
+        </div>
+        <input type="checkbox" id="nav-check">
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="/"> Graficos </a>
+          <a href="registro_ingresos.html">Ingresos</a>
+          <a href="registro_gastos.html">Gastos</a>
+        </div>
+      </div>
+</body>
+</head>
+<body>
+  <div class="form-section">
+    <h1>INGRESOS</h1>
+    <form method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+        <br>
+        <label for="monto">Monto (en euros):</label>
+        <input type="number" name="monto" id="monto" step="0.01" min="0" placeholder="Euros" required>
+        <br>
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha" required>
+        <br>
+        <input type="submit" value="Guardar">
+    </form>
+  </div>
+</body>
+</html>
